@@ -1,0 +1,9 @@
+# So
+.idea/
+.vscode/
+*.suo
+*.user
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
