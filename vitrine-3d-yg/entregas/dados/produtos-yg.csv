@@ -1,0 +1,31 @@
+﻿id;titulo;artista;tipo;genero;selo;formato;data_lancamento;status;faixas;duracao;preco_digital;preco_fisico;estoque;observacao
+YG-EP-0028;Feito a Mão;Grupo Beira Rio;EP;Pagode;YG Urbano;K7;08/03/2021;Esgotado;5;22:04;R$ 15,30;R$ 89,90;0;Edição limitada de 300 cópias
+YG-SGL-0012;Linha de Frente;Rafa Cordeiro;Single;Rap;YG Sessions;K7;27/04/2021;Disponível;2;8:54;R$ 6,50;R$ 31,70;51;Cassete e download digital.
+YG-ALB-0004;Do Lado de Lá;Solange Reis;Álbum;MPB;YG Clássicos;K7;18/05/2021;Disponível;12;53:33;R$ 27,40;R$ 219,90;933;Cassete e download digital.
+YG-EP-0011;Pele e Osso;Em Canto & Prosa;EP;Samba;YG Sessions;Vinil colorido;02/06/2021;Disponível;5;20:20;R$ 22,50;R$ 94,90;330;Edição colorida em vinil e download digital.
+YG-SGL-0027;Fim de Tarde;Ciranda do Norte;Single;Forró;YG Sessions;"Vinil 7""";09/07/2021;Disponível;1;2:54;R$ 9,50;R$ 34,10;46;Download digital e vinil de 7 polegadas.
+YG-SGL-0026;Vento Solar;Ciranda do Norte;Single;Forró;YG Sessions;K7;22/03/2022;Disponível;1;5:14;R$ 8,80;R$ 36,00;145;Cassete e download digital.
+YG-ALB-0010;Mar de Dentro;Marta Cavalcante;Álbum;Samba;YG Clássicos;Vinil colorido;05/05/2022;Disponível;11;47:38;R$ 34,80;R$ 194,90;279;Edição colorida em vinil e download digital.
+YG-SGL-0029;Contraluz;Voz da Aliança;Single;Gospel;YG Sessions;"Vinil 7""";16/05/2022;Disponível;2;6:28;R$ 8,40;R$ 32,00;218;Download digital e vinil de 7 polegadas.
+YG-EP-0002;Cais;Tom Bastos;EP;MPB;YG Sessions;Vinil colorido;01/08/2022;Disponível;5;22:05;R$ 15,20;R$ 94,90;351;Edição colorida em vinil e download digital.
+YG-SGL-0015;Fogo Brando;Pedra Alta;Single;Rock;YG Sessions;K7;05/08/2022;Disponível;2;6:41;R$ 6,80;R$ 30,40;124;Cassete e download digital.
+YG-ALB-0021;Rota 12;Chico do Vale;Álbum;Sertanejo;YG Sessions;Vinil 180 g;13/08/2022;Esgotado;12;54:44;R$ 25,70;R$ 189,90;0;Tiragem de colecionador
+YG-ALB-0007;Voz de Dentro;Nina Dourado;Álbum;Pop;YG Music;CD;12/02/2023;Esgotado;11;50:45;R$ 38,40;R$ 179,90;0;Edição limitada de 300 cópias
+YG-ALB-0022;Vermelho Absoluto;MC Derick Zona;Álbum;Funk;YG Sertanejo;K7;23/02/2023;Disponível;11;46:32;R$ 30,00;R$ 174,90;1251;Cassete e download digital.
+YG-SGL-0025;Agora ou Nunca;DJ Kalebe;Single;Eletrônico;YG Sertanejo;K7;10/11/2023;Disponível;2;7:15;R$ 7,10;R$ 36,80;244;Cassete e download digital.
+YG-ALB-0009;Poeira de Estrada;Os Originais;Álbum;Samba;YG Sertanejo;CD;17/12/2023;Disponível;9;34:26;R$ 27,60;R$ 254,90;2288;CD e download digital.
+YG-ALB-0017;Quarta-Feira;Banda Farol Baixo;Álbum;Rock;YG Clássicos;CD;28/12/2023;Disponível;13;56:05;R$ 38,80;R$ 249,90;2176;CD e download digital.
+YG-SGL-0014;Cidade Submersa;Coletivo Área 92;Single;Rap;YG Urbano;"Vinil 7""";09/05/2024;Esgotado;2;7:45;R$ 5,00;R$ 36,70;0;Prensagem esgotada no distribuidor
+YG-EP-0020;Mais Uma Volta;João Vitor & Bruna;EP;Sertanejo;YG Sessions;Vinil 180 g;30/05/2024;Disponível;5;21:24;R$ 20,10;R$ 69,90;309;Vinil de 180 g e download digital.
+YG-ALB-0016;Dentro do Peito;Tuia;Álbum;Rock;YG Music;Vinil 180 g;29/08/2024;Disponível;10;38:40;R$ 34,60;R$ 189,90;1905;Vinil de 180 g e download digital.
+YG-SGL-0024;Norte;Prisma Sonoro;Single;Eletrônico;YG Sessions;K7;04/02/2025;Disponível;2;7:30;R$ 6,60;R$ 34,40;343;Cassete e download digital.
+YG-SGL-0003;Sob a Luz;Clara Villela;Single;MPB;YG Sessions;"Vinil 7""";17/09/2025;Disponível;3;13:29;R$ 8,50;R$ 32,70;202;Download digital e vinil de 7 polegadas.
+YG-ALB-0018;Sala de Espera;Helena Vasques;Álbum;Bossa Nova;YG Clássicos;Vinil colorido;16/02/2026;Disponível;13;54:33;R$ 26,90;R$ 234,90;167;Edição colorida em vinil e download digital.
+YG-ALB-0013;Ruído Branco;Sintaxe Urbana;Álbum;Rap;YG Sertanejo;K7;25/02/2026;Disponível;11;42:46;R$ 39,70;R$ 194,90;1092;Cassete e download digital.
+YG-SGL-0008;Estúdio 3;Nathalia Prado;Single;Pop;YG Clássicos;K7;16/03/2026;Disponível;2;8:05;R$ 6,00;R$ 34,00;77;Cassete e download digital.
+YG-SGL-0001;Zona Leste;Luara Mendes;Single;MPB;YG Sertanejo;"Vinil 7""";04/07/2026;Disponível;3;14:09;R$ 4,90;R$ 37,70;30;Download digital e vinil de 7 polegadas.
+YG-ALB-0005;Primeira Sessão;Nathalia Prado;Álbum;Pop;YG Urbano;CD;09/07/2026;Disponível;9;39:02;R$ 37,00;R$ 239,90;1204;CD e download digital.
+YG-SGL-0006;Hoje é Sempre;Verão Elétrico;Single;Pop;YG Sessions;"Vinil 7""";11/09/2026;Disponível;1;4:08;R$ 7,30;R$ 30,00;275;Download digital e vinil de 7 polegadas.
+YG-SGL-0030;Alta Fidelidade;Turma do Grilo Falante;Single;Infantil;YG Sessions;"Vinil 7""";19/10/2026;Pré-venda;2;8:15;R$ 7,70;R$ 36,90;1973;Lançamento previsto para 19/10/2026
+YG-SGL-0023;Águas Raras;Bru Ferreira;Single;Funk;YG Music;"Vinil 7""";11/11/2026;Pré-venda;2;8:56;R$ 7,10;R$ 39,00;1014;Lançamento previsto para 11/11/2026
+YG-SGL-0019;Correnteza;Duo Orla;Single;Bossa Nova;YG Music;"Vinil 7""";18/11/2026;Pré-venda;2;8:45;R$ 8,40;R$ 39,20;2966;Lançamento previsto para 18/11/2026

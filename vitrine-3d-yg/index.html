@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vitrine 3D de lançamentos — YG Música e Entretenimento</title>
+<meta name="description" content="Vitrine interativa em 3D do catálogo de lançamentos da YG Música e Entretenimento S.A. Dados fictícios.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- Cenário 3D. O app cria a cena dentro deste canvas. -->
+<canvas id="palco" aria-label="Vitrine tridimensional dos lançamentos da YG"></canvas>
+
+<div id="sem-webgl" class="aviso" hidden>
+  <h2>Não foi possível iniciar o 3D</h2>
+  <p>Este navegador não entregou um contexto WebGL. Tente abrir a página em
+     outro navegador ou ativar a aceleração de hardware.</p>
+</div>
+
+<header class="topo">
+  <div class="marca">
+    <span class="logo" aria-hidden="true">YG</span>
+    <div class="marca-texto">
+      <h1>Vitrine de lançamentos</h1>
+      <p>YG Música e Entretenimento S.A. · <span id="resumo-catalogo">carregando…</span></p>
+    </div>
+  </div>
+  <button id="botao-painel" class="botao-icone" type="button"
+          aria-expanded="false" aria-controls="painel-lateral">
+    Catálogo
+  </button>
+</header>
+
+<!-- Lista e filtros -->
+<aside class="painel painel-lateral" id="painel-lateral" aria-label="Catálogo e filtros">
+  <div class="painel-cabeca">
+    <h2>Catálogo</h2>
+    <p id="contagem">—</p>
+  </div>
+
+  <div class="filtros">
+    <label class="campo">
+      <span>Buscar</span>
+      <input id="busca" type="search" placeholder="título, artista ou gênero"
+             autocomplete="off">
+    </label>
+    <div class="campo-par">
+      <label class="campo">
+        <span>Tipo</span>
+        <select id="filtro-tipo">
+          <option value="">Todos</option>
+        </select>
+      </label>
+      <label class="campo">
+        <span>Situação</span>
+        <select id="filtro-status">
+          <option value="">Todas</option>
+        </select>
+      </label>
+    </div>
+    <label class="campo">
+      <span>Gênero</span>
+      <select id="filtro-genero">
+        <option value="">Todos</option>
+      </select>
+    </label>
+    <button id="limpar-filtros" class="botao-secundario" type="button">
+      Limpar filtros
+    </button>
+  </div>
+
+  <ol class="lista" id="lista" tabindex="0"></ol>
+</aside>
+
+<!-- Detalhe do produto selecionado -->
+<aside class="painel painel-detalhe" id="painel-detalhe" aria-label="Detalhe do produto" hidden>
+  <button id="fechar-detalhe" class="botao-fechar" type="button" aria-label="Fechar detalhe">
+    ×
+  </button>
+  <div class="detalhe-topo">
+    <div class="capa-miniatura" id="capa-miniatura" aria-hidden="true"></div>
+    <div class="detalhe-titulos">
+      <p class="detalhe-artista" id="detalhe-artista"></p>
+      <h2 id="detalhe-titulo"></h2>
+      <p class="detalhe-selo" id="detalhe-selo"></p>
+      <p class="etiquetas" id="detalhe-etiquetas"></p>
+    </div>
+  </div>
+  <p class="detalhe-descricao" id="detalhe-descricao"></p>
+  <dl class="detalhe-numeros" id="detalhe-numeros"></dl>
+  <div class="detalhe-precos">
+    <div>
+      <span>Digital</span>
+      <strong id="preco-digital"></strong>
+      <button class="botao-compra" type="button" data-compra="digital">
+        Comprar digital
+      </button>
+    </div>
+    <div>
+      <span>Físico</span>
+      <strong id="preco-fisico"></strong>
+      <button class="botao-compra" type="button" data-compra="fisico">
+        Comprar físico
+      </button>
+    </div>
+  </div>
+  <p class="detalhe-observacao" id="detalhe-observacao"></p>
+  <details class="faixas">
+    <summary>Ver faixas (<span id="detalhe-n-faixas"></span>)</summary>
+    <ol id="detalhe-faixas"></ol>
+  </details>
+  <p class="detalhe-aviso">
+    Demonstração de catálogo: os botões de compra não enviam pedido nem
+    cobrança. Os produtos e os valores são fictícios.
+  </p>
+</aside>
+
+<footer class="rodape">
+  <p>arraste para girar · clique numa capa para abrir · <kbd>←</kbd> <kbd>→</kbd> trocam · <kbd>Esc</kbd> fecha</p>
+  <p>Dados fictícios — Lei nº 13.709/2018 (LGPD) · Three.js r149</p>
+</footer>
+
+<div id="carregando" class="aviso aviso-carregando">
+  <p>Montando a vitrine…</p>
+</div>
+
+<!-- Dados gerados por gerar_catalogo.py e a biblioteca 3D (formato UMD, sem módulos) -->
+<script src="dados/catalogo-yg.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

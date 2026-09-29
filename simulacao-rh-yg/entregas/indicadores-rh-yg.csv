@@ -1,0 +1,26 @@
+﻿indicador;valor;unidade;como_foi_calculado
+Quadro de pessoal;200;funcionários;contagem de linhas da base
+Funcionários ativos;153;funcionários;status diferente de Desligado, incluindo afastados
+Funcionários em atividade;138;funcionários;ativos menos os afastados no momento
+Afastados no momento;15;funcionários;status igual a Afastado
+Desligados no período;47;funcionários;data de desligamento entre 01/01/2026 e 30/09/2026
+Rotatividade anualizada;35,5;percentual;desligados ÷ quadro médio × (12 ÷ 9 meses)
+Absenteísmo;3,28;percentual;dias de afastamento ÷ (ativos × 188 dias úteis)
+Frequência de faltas;1,59;percentual;faltas ÷ (ativos × 188 dias úteis)
+Salário total médio;R$ 4.769,43;reais por mês;média do salário total dos ativos
+Salário total mediano;R$ 3.330,00;reais por mês;mediana do salário total dos ativos
+Salário total mínimo;R$ 1.230,00;reais por mês;menor salário total entre os ativos
+Salário total máximo;R$ 21.530,00;reais por mês;maior salário total entre os ativos
+Folha mensal;R$ 729.723;reais por mês;soma do salário total dos ativos
+Custo mensal estimado;R$ 977.829;reais por mês;folha × (1 + 34% de encargos, hipótese)
+Custo anual estimado;R$ 12.711.775;reais por ano;custo mensal × 13 (12 meses mais 13º salário)
+Tempo de casa médio;5,2;anos;média dos anos desde a admissão, entre os ativos
+Idade média;36,9;anos;média das idades em 30/09/2026, entre os ativos
+Treinamento médio;14,0;horas no período;média das horas de treinamento no período
+Posições de gestão;28;funcionários;nível Coordenação ou Gerência
+Mulheres no quadro ativo;39,9;percentual;ativos com sexo F ÷ ativos × 100
+Risco alto de turnover;7;funcionários;ativos com escore de risco igual a Alto
+Saídas voluntárias no período;21;funcionários;pedido de demissão mais acordo entre as partes
+Saídas involuntárias no período;26;funcionários;desligamentos menos as saídas voluntárias
+Rotatividade voluntária anualizada;15,9;percentual;saídas voluntárias ÷ quadro médio × (12 ÷ 9)
+Rotatividade involuntária anualizada;19,6;percentual;saídas involuntárias ÷ quadro médio × (12 ÷ 9)

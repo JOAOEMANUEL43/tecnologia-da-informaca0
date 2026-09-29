@@ -1,0 +1,135 @@
+﻿tema;base_de_calculo;categoria;funcionarios;participacao_pct
+Nivel;Quadro completo;Estágio;14;7,0
+Nivel;Quadro completo;Assistente;31;15,5
+Nivel;Quadro completo;Operacional;15;7,5
+Nivel;Quadro completo;Júnior;33;16,5
+Nivel;Quadro completo;Pleno;61;30,5
+Nivel;Quadro completo;Sênior;18;9,0
+Nivel;Quadro completo;Coordenação;13;6,5
+Nivel;Quadro completo;Gerência;15;7,5
+Cargo;Quadro completo;Auxiliar de Serviços Gerais (Operacional);7;3,5
+Cargo;Quadro completo;Assistente de Produção (Assistente);5;2,5
+Cargo;Quadro completo;Técnico de Áudio (Pleno);5;2,5
+Cargo;Quadro completo;Analista de Marketing (Júnior);5;2,5
+Cargo;Quadro completo;Analista de Marketing (Pleno);5;2,5
+Cargo;Quadro completo;Produtor Musical (Pleno);4;2,0
+Cargo;Quadro completo;Editor de Áudio (Júnior);4;2,0
+Cargo;Quadro completo;Analista de A&R (Júnior);4;2,0
+Cargo;Quadro completo;Analista de A&R (Pleno);4;2,0
+Cargo;Quadro completo;Analista de Conteúdo Digital (Pleno);4;2,0
+Cargo;Quadro completo;Produtor de Eventos (Pleno);4;2,0
+Cargo;Quadro completo;Técnico de Som e Luz (Operacional);4;2,0
+Cargo;Quadro completo;Analista de TI (Pleno);4;2,0
+Cargo;Quadro completo;Produtor Musical (Sênior);3;1,5
+Cargo;Quadro completo;Estagiário de Produção (Estágio);3;1,5
+Cargo;Quadro completo;Mestre de Gravação (Sênior);3;1,5
+Cargo;Quadro completo;Técnico de Gravação (Pleno);3;1,5
+Cargo;Quadro completo;Técnico de Gravação (Júnior);3;1,5
+Cargo;Quadro completo;Assistente de Estúdio (Assistente);3;1,5
+Cargo;Quadro completo;Designer (Pleno);3;1,5
+Cargo;Quadro completo;Analista de Direitos Digitais (Sênior);3;1,5
+Cargo;Quadro completo;Assistente de Operações (Assistente);3;1,5
+Cargo;Quadro completo;Executivo de Contas (Pleno);3;1,5
+Cargo;Quadro completo;Montador de Palco (Assistente);3;1,5
+Cargo;Quadro completo;Advogado (Sênior);3;1,5
+Cargo;Quadro completo;Analista de Royalties (Pleno);3;1,5
+Cargo;Quadro completo;Analista Financeiro (Pleno);3;1,5
+Cargo;Quadro completo;Analista Financeiro (Júnior);3;1,5
+Cargo;Quadro completo;Analista de TI (Júnior);3;1,5
+Cargo;Quadro completo;Analista de Logística (Júnior);3;1,5
+Cargo;Quadro completo;Motorista (Operacional);3;1,5
+Cargo;Quadro completo;Analista Administrativo (Pleno);3;1,5
+Cargo;Quadro completo;Assistente Administrativo (Assistente);3;1,5
+Cargo;Quadro completo;Supervisor de Produção (Coordenação);2;1,0
+Cargo;Quadro completo;Gerente de Produção (Gerência);2;1,0
+Cargo;Quadro completo;Estagiário de Estúdio (Estágio);2;1,0
+Cargo;Quadro completo;Coordenador de Estúdio (Coordenação);2;1,0
+Cargo;Quadro completo;Coordenador de A&R (Coordenação);2;1,0
+Cargo;Quadro completo;Assistente de Artista (Assistente);2;1,0
+Cargo;Quadro completo;Gerente de Repertório (Gerência);2;1,0
+Cargo;Quadro completo;Editor de Vídeo (Júnior);2;1,0
+Cargo;Quadro completo;Assistente de Marketing (Assistente);2;1,0
+Cargo;Quadro completo;Estagiário de Marketing (Estágio);2;1,0
+Cargo;Quadro completo;Gerente de Marketing (Gerência);2;1,0
+Cargo;Quadro completo;Suporte a Artistas (Pleno);2;1,0
+Cargo;Quadro completo;Coordenador de Distribuição (Coordenação);2;1,0
+Cargo;Quadro completo;Executivo de Contas (Sênior);2;1,0
+Cargo;Quadro completo;Analista de Licenciamento (Pleno);2;1,0
+Cargo;Quadro completo;Assistente Comercial (Assistente);2;1,0
+Cargo;Quadro completo;Estagiário Comercial (Estágio);2;1,0
+Cargo;Quadro completo;Coordenador de Produção de Evento (Coordenação);2;1,0
+Cargo;Quadro completo;Analista de Eventos (Júnior);2;1,0
+Cargo;Quadro completo;Estagiário de Produção de Evento (Estágio);2;1,0
+Cargo;Quadro completo;Analista Jurídico (Pleno);2;1,0
+Cargo;Quadro completo;Assistente Jurídico (Assistente);2;1,0
+Cargo;Quadro completo;Analista de Royalties (Júnior);2;1,0
+Cargo;Quadro completo;Assistente de Composição (Assistente);2;1,0
+Cargo;Quadro completo;Contador (Sênior);2;1,0
+Cargo;Quadro completo;Assistente Financeiro (Assistente);2;1,0
+Cargo;Quadro completo;Analista de RH (Pleno);2;1,0
+Cargo;Quadro completo;Analista de RH (Júnior);2;1,0
+Cargo;Quadro completo;Desenvolvedor de Software (Sênior);2;1,0
+Cargo;Quadro completo;Suporte Técnico (Assistente);2;1,0
+Cargo;Quadro completo;Analista de Suprimentos (Pleno);2;1,0
+Cargo;Quadro completo;Operador de Áudio (Pleno);1;0,5
+Cargo;Quadro completo;Gerente de Estúdio (Gerência);1;0,5
+Cargo;Quadro completo;Social Media (Pleno);1;0,5
+Cargo;Quadro completo;Gerente de Vendas (Gerência);1;0,5
+Cargo;Quadro completo;Gerente de Eventos (Gerência);1;0,5
+Cargo;Quadro completo;Estágio Jurídico (Estágio);1;0,5
+Cargo;Quadro completo;Gerente Jurídico (Gerência);1;0,5
+Cargo;Quadro completo;Coordenador de Repartição (Coordenação);1;0,5
+Cargo;Quadro completo;Gerente Financeiro (Gerência);1;0,5
+Cargo;Quadro completo;Recrutador (Pleno);1;0,5
+Cargo;Quadro completo;Estágio de RH (Estágio);1;0,5
+Cargo;Quadro completo;Gerente de RH (Gerência);1;0,5
+Cargo;Quadro completo;Estagiário de TI (Estágio);1;0,5
+Cargo;Quadro completo;Coordenador de TI (Coordenação);1;0,5
+Cargo;Quadro completo;Gerente de TI (Gerência);1;0,5
+Cargo;Quadro completo;Coordenador de Logística (Coordenação);1;0,5
+Cargo;Quadro completo;Gerente de Logística (Gerência);1;0,5
+Cargo;Quadro completo;Recepcionista (Operacional);1;0,5
+Cargo;Quadro completo;Gerente Administrativo (Gerência);1;0,5
+Tipo de contrato;Quadro completo;CLT;181;90,5
+Tipo de contrato;Quadro completo;Estagiário;14;7,0
+Tipo de contrato;Quadro completo;Aprendiz;3;1,5
+Tipo de contrato;Quadro completo;Pessoa jurídica;2;1,0
+Turno;Quadro completo;Integral;151;75,5
+Turno;Quadro completo;Noturno;15;7,5
+Turno;Quadro completo;Manhã;13;6,5
+Turno;Quadro completo;Meio período;12;6,0
+Turno;Quadro completo;Tarde;9;4,5
+Jornada semanal;Quadro completo;20 horas;14;7,0
+Jornada semanal;Quadro completo;30 horas;12;6,0
+Jornada semanal;Quadro completo;40 horas;32;16,0
+Jornada semanal;Quadro completo;44 horas;142;71,0
+Faixa etaria;Quadro ativo;Até 24;21;13,7
+Faixa etaria;Quadro ativo;25 a 34;51;33,3
+Faixa etaria;Quadro ativo;35 a 44;44;28,8
+Faixa etaria;Quadro ativo;45 a 54;24;15,7
+Faixa etaria;Quadro ativo;55 ou mais;13;8,5
+Tempo de casa;Quadro ativo;Menos de 1 ano;18;11,8
+Tempo de casa;Quadro ativo;1 a 2 anos;28;18,3
+Tempo de casa;Quadro ativo;3 a 4 anos;32;20,9
+Tempo de casa;Quadro ativo;5 a 9 anos;58;37,9
+Tempo de casa;Quadro ativo;10 anos ou mais;17;11,1
+Sexo;Quadro ativo;Feminino;61;39,9
+Sexo;Quadro ativo;Masculino;92;60,1
+Escolaridade;Quadro ativo;Superior incompleto;43;28,1
+Escolaridade;Quadro ativo;Superior completo;38;24,8
+Escolaridade;Quadro ativo;Ensino Técnico completo;24;15,7
+Escolaridade;Quadro ativo;Pós-graduação;21;13,7
+Escolaridade;Quadro ativo;Mestrado;16;10,5
+Escolaridade;Quadro ativo;Ensino Médio completo;11;7,2
+Posicionamento salarial;Quadro ativo;Abaixo da mediana;46;30,1
+Posicionamento salarial;Quadro ativo;Na mediana;67;43,8
+Posicionamento salarial;Quadro ativo;Acima da mediana;40;26,1
+Risco de turnover;Quadro ativo;Baixo;104;68,0
+Risco de turnover;Quadro ativo;Médio;42;27,5
+Risco de turnover;Quadro ativo;Alto;7;4,6
+Motivo do desligamento;Desligados no periodo;Pedido de demissão;17;36,2
+Motivo do desligamento;Desligados no periodo;Desligamento por reestruturação;9;19,1
+Motivo do desligamento;Desligados no periodo;Demissão sem justa causa;9;19,1
+Motivo do desligamento;Desligados no periodo;Término de contrato de estágio;5;10,6
+Motivo do desligamento;Desligados no periodo;Acordo entre as partes;4;8,5
+Motivo do desligamento;Desligados no periodo;Aposentadoria;3;6,4
