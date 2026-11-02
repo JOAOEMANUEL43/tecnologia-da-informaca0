@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inovação tecnológica no Brasil — PINTEC 2017 | Dados do IBGE</title>
+  <meta name="description" content="Página interativa com os dados oficiais da Pesquisa de Inovação (PINTEC 2017) do IBGE: taxa de inovação, setores, gastos, obstáculos e ecossistema de inovação no Brasil.">
+  <meta name="theme-color" content="#f4efe3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d3b2c'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23c9ee5e'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pintec-tema');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'escuro' : 'claro';
+        document.documentElement.setAttribute('data-tema', t);
+      } catch (e) { /* preferência indisponível */ }
+    })();
+  </script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progresso" id="progresso" aria-hidden="true"></div>
+
+  <header class="topo" id="topo-site">
+    <div class="topo__interno">
+      <a class="marca" href="#topo" aria-label="PINTEC — Inovação no Brasil, ir para o início">
+        <span class="marca__selo" aria-hidden="true">P</span>
+        <span class="marca__texto">
+          <strong>PINTEC</strong>
+          <span>Inovação no Brasil</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Seções da página">
+        <a href="#evolucao">Evolução</a>
+        <a href="#setores">Setores</a>
+        <a href="#gastos">Gastos</a>
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#obstaculos">Obstáculos</a>
+        <a href="#dados">Dados</a>
+      </nav>
+
+      <div class="topo__acoes">
+        <span class="status" id="status-api" data-estado="local" aria-live="polite" title="Origem dos dados exibidos">
+          <span class="status__ponto" aria-hidden="true"></span>
+          <span class="status__texto">Snapshot local</span>
+        </span>
+        <button class="botao-icone" id="btn-atualizar" type="button" title="Buscar dados atualizados na API SIDRA" aria-label="Atualizar dados pela API SIDRA">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+        </button>
+        <button class="botao-icone" id="btn-tema" type="button" aria-label="Alternar tema escuro" aria-pressed="false">
+          <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+          <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="topo">
+      <div class="container hero__grade">
+        <div class="hero__texto">
+          <p class="olho revelar"><span class="olho__ponto" aria-hidden="true"></span>IBGE · Pesquisa de Inovação · PINTEC 2017</p>
+          <h1 class="revelar">Inovação tecnológica <em>no Brasil</em></h1>
+          <p class="hero__dek revelar">
+            Entre 2015 e 2017, <strong>39.329 empresas</strong> brasileiras criaram produtos ou processos novos —
+            33,6% do universo pesquisado pelo IBGE. Quando entram em cena mudanças organizacionais e de marketing,
+            a fatia sobe para <strong>65,3%</strong>. Explore os números que descrevem como o país inova.
+          </p>
+          <div class="hero__acoes revelar">
+            <a class="botao botao--principal" href="#evolucao">
+              Explorar os dados
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="botao botao--fantasma" href="#metodologia">Metodologia</a>
+          </div>
+          <ul class="hero__meta revelar">
+            <li>Triênio 2015–2017</li>
+            <li>116.962 empresas</li>
+            <li>Brasil</li>
+            <li>Fonte: SIDRA/IBGE</li>
+          </ul>
+        </div>
+
+        <aside class="hero__painel revelar" aria-label="Taxas de inovação em 2017">
+          <div class="hero__painel-topo">
+            <p>Taxa de inovação</p>
+            <span>2017</span>
+          </div>
+          <div class="medidores">
+            <div class="medidor" id="medidor-produto"></div>
+            <div class="medidor" id="medidor-amplo"></div>
+          </div>
+          <p class="hero__painel-nota">
+            O indicador amplo soma as empresas com inovação de produto, processo, organizacional ou de marketing.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= KPIs ================= -->
+    <section class="faixa-kpis" aria-label="Indicadores principais de 2017">
+      <div class="container">
+        <div class="faixa-kpis__topo revelar">
+          <p class="olho olho--curto">Em números · 2017</p>
+          <p class="faixa-kpis__nota">Valores nominais. Percentuais calculados sobre o total de empresas do escopo.</p>
+        </div>
+        <div class="kpis" id="kpis"></div>
+      </div>
+    </section>
+
+    <!-- ================= EVOLUÇÃO ================= -->
+    <section class="secao" id="evolucao">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">01</span>Evolução</p>
+          <h2>Uma década de avanços e recuos</h2>
+          <p class="secao__dek">
+            A proporção de empresas que inovaram em produto ou processo caiu de 38,6% em 2008 para 33,6% em 2017.
+            No conceito amplo, que inclui organização e marketing, o recuo foi de 73,4% para 65,3%.
+          </p>
+        </header>
+
+        <div class="painel revelar">
+          <div class="painel__barra">
+            <div class="abas" id="evolucao-abas" role="tablist" aria-label="Métrica do gráfico de evolução">
+              <button class="aba" role="tab" type="button" data-valor="taxas" aria-selected="true" aria-controls="evolucao-painel">Taxas de inovação</button>
+              <button class="aba" role="tab" type="button" data-valor="gastos" aria-selected="false" aria-controls="evolucao-painel" tabindex="-1">Gastos em inovação</button>
+              <button class="aba" role="tab" type="button" data-valor="intensidade" aria-selected="false" aria-controls="evolucao-painel" tabindex="-1">Intensidade</button>
+            </div>
+            <p class="painel__fonte">PINTEC 2008–2017 · tabela 5018</p>
+          </div>
+          <div id="evolucao-painel" role="tabpanel" aria-live="polite">
+            <div class="legenda" id="evolucao-legenda"></div>
+            <div class="grafico" id="evolucao-grafico"></div>
+            <p class="painel__nota" id="evolucao-nota"></p>
+          </div>
+        </div>
+
+        <div class="destaque revelar">
+          <p>
+            <strong>O esforço encolheu.</strong> O gasto total em inovação caiu 17,4% entre 2014 e 2017, para
+            R$ 67,3 bilhões, enquanto a receita líquida cresceu 7,4%. Resultado: a intensidade de inovação
+            recuou de 2,54% para 1,95% do faturamento.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SETORES ================= -->
+    <section class="secao secao--alt" id="setores">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">02</span>Setores</p>
+          <h2>Quem inova mais, atividade por atividade</h2>
+          <p class="secao__dek">
+            Serviços intensivos em conhecimento lideram em proporção. As indústrias de transformação concentram
+            o maior número absoluto de inovadoras, mas ficam abaixo da média nacional quando o assunto é taxa.
+          </p>
+        </header>
+
+        <div class="filtros revelar" id="setores-filtros" role="group" aria-label="Filtrar setores por grupo">
+          <button class="chip chip--ativo" type="button" data-valor="todos" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-valor="Indústria" aria-pressed="false">Indústria</button>
+          <button class="chip" type="button" data-valor="Serviços" aria-pressed="false">Serviços</button>
+          <button class="chip" type="button" data-valor="Energia" aria-pressed="false">Energia</button>
+        </div>
+
+        <div class="painel revelar">
+          <div class="painel__barra">
+            <h3 class="painel__titulo">Taxa de inovação em produto ou processo</h3>
+            <p class="painel__fonte">2017 · tabela 5453</p>
+          </div>
+          <div class="legenda" id="setores-legenda"></div>
+          <div class="grafico" id="setores-grafico"></div>
+          <p class="painel__nota">
+            Barras normalizadas pela maior taxa do recorte. Os números indicam a taxa real de cada atividade.
+            <span class="tag-alerta">base pequena</span> sinaliza setores com menos de 30 empresas no escopo.
+          </p>
+        </div>
+
+        <p class="insight revelar" id="setores-insight"></p>
+      </div>
+    </section>
+
+    <!-- ================= TIPOS E NOVIDADE ================= -->
+    <section class="secao" id="tipos">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">03</span>Tipos de inovação</p>
+          <h2>O que muda quando uma empresa inova</h2>
+          <p class="secao__dek">
+            Inovar em processo é mais comum do que lançar um produto novo. E a maior parte das novidades
+            é nova apenas para a própria empresa — não para o mercado ou para o mundo.
+          </p>
+        </header>
+
+        <div class="grade grade--2">
+          <div class="painel revelar">
+            <div class="painel__barra">
+              <h3 class="painel__titulo">Produto, processo ou ambos</h3>
+              <p class="painel__fonte">39.329 inovadoras</p>
+            </div>
+            <div class="rosca" id="tipos-rosca"></div>
+            <p class="painel__nota">Empresas com inovação de produto e/ou processo concluída no triênio 2015–2017.</p>
+          </div>
+
+          <div class="painel revelar">
+            <div class="painel__barra">
+              <h3 class="painel__titulo">Grau de novidade</h3>
+              <p class="painel__fonte">tabela 5458</p>
+            </div>
+            <div class="grafico" id="novidade-grafico"></div>
+            <p class="painel__nota" id="novidade-nota"></p>
+          </div>
+        </div>
+
+        <div class="painel revelar painel--largo">
+          <div class="painel__barra">
+            <h3 class="painel__titulo">Participação dos novos produtos nas vendas</h3>
+            <p class="painel__fonte">2017 · tabela 5618</p>
+          </div>
+          <div class="grafico" id="vendas-grafico"></div>
+          <p class="painel__nota">
+            Entre as 22.058 empresas com inovação de produto, 9.844 (44,6%) disseram que produtos novos
+            responderam por 10% a 40% das vendas. Para 7.674 (34,8%), passaram de 40%.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GASTOS ================= -->
+    <section class="secao secao--alt" id="gastos">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">04</span>Investimento</p>
+          <h2>Onde o dinheiro da inovação é gasto</h2>
+          <p class="secao__dek">
+            P&amp;D interno lidera, com R$ 25,6 bilhões — 38,1% do total. Máquinas e equipamentos vêm em seguida,
+            com R$ 21,2 bilhões. Juntos, os dois respondem por quase 70% do dispêndio.
+          </p>
+        </header>
+
+        <div class="painel revelar">
+          <div class="painel__barra">
+            <h3 class="painel__titulo">Dispêndio em atividades inovativas</h3>
+            <p class="painel__fonte">2017 · R$ 67,3 bi · tabela 5464</p>
+          </div>
+          <div class="grafico" id="dispendios-grafico"></div>
+          <p class="painel__nota">
+            33.380 empresas (28,5% do escopo) realizaram algum dispêndio em inovação. Valores nominais,
+            em reais correntes.
+          </p>
+        </div>
+
+        <div class="grade grade--3 revelar">
+          <div class="mini-card">
+            <p class="mini-card__rotulo">P&amp;D interno</p>
+            <p class="mini-card__valor">38,1%</p>
+            <p class="mini-card__nota">do gasto total em inovação</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-card__rotulo">Máquinas e equipamentos</p>
+            <p class="mini-card__valor">31,5%</p>
+            <p class="mini-card__nota">do gasto total em inovação</p>
+          </div>
+          <div class="mini-card">
+            <p class="mini-card__rotulo">Empresas que investiram</p>
+            <p class="mini-card__valor">33.380</p>
+            <p class="mini-card__nota">28,5% do total pesquisado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ECOSSISTEMA ================= -->
+    <section class="secao" id="ecossistema">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">05</span>Ecossistema</p>
+          <h2>As conexões ao redor da inovação</h2>
+          <p class="secao__dek">
+            De onde vêm as informações, com quem as empresas cooperam e que tipo de apoio público chega até elas.
+            Os três recortes mostram um sistema que inova muito perto de casa.
+          </p>
+        </header>
+
+        <div class="painel revelar">
+          <div class="painel__barra painel__barra--abas">
+            <div class="abas" id="eco-abas" role="tablist" aria-label="Dimensão do ecossistema de inovação">
+              <button class="aba" role="tab" type="button" data-valor="fontes" aria-selected="true" aria-controls="eco-painel">Fontes de informação</button>
+              <button class="aba" role="tab" type="button" data-valor="cooperacao" aria-selected="false" aria-controls="eco-painel" tabindex="-1">Cooperação</button>
+              <button class="aba" role="tab" type="button" data-valor="apoio" aria-selected="false" aria-controls="eco-painel" tabindex="-1">Apoio do governo</button>
+            </div>
+          </div>
+          <div id="eco-painel" role="tabpanel" aria-live="polite">
+            <div class="eco-stat" id="eco-stat"></div>
+            <div class="grafico" id="eco-grafico"></div>
+            <p class="painel__nota" id="eco-nota"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OBSTÁCULOS ================= -->
+    <section class="secao secao--alt" id="obstaculos">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">06</span>Obstáculos</p>
+          <h2>O que impede a inovação</h2>
+          <p class="secao__dek">
+            Riscos econômicos, custos elevados e falta de financiamento aparecem no topo tanto entre inovadoras
+            quanto entre não inovadoras. Compare os dois grupos.
+          </p>
+        </header>
+
+        <div class="filtros revelar" id="obst-filtros" role="group" aria-label="Grupo de empresas do gráfico de obstáculos">
+          <button class="chip" type="button" data-valor="inovadoras" aria-pressed="false">Inovadoras</button>
+          <button class="chip" type="button" data-valor="naoInovadoras" aria-pressed="false">Não inovadoras</button>
+          <button class="chip chip--ativo" type="button" data-valor="comparar" aria-pressed="true">Comparar</button>
+        </div>
+
+        <div class="painel revelar">
+          <div class="painel__barra">
+            <h3 class="painel__titulo">Empresas que atribuíram alta importância ao obstáculo</h3>
+            <p class="painel__fonte">2017 · tabela 5926</p>
+          </div>
+          <div class="legenda" id="obst-legenda"></div>
+          <div class="grafico" id="obst-grafico"></div>
+          <p class="painel__nota" id="obst-nota"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ALÉM DO PRODUTO ================= -->
+    <section class="secao" id="alem">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">07</span>Além do produto</p>
+          <h2>Inovação também é gestão, design e marketing</h2>
+          <p class="secao__dek">
+            Mudanças na organização do trabalho, na gestão ambiental ou nas estratégias de mercado contam como
+            inovação. Para 37.082 empresas, foram a única forma de inovar no período.
+          </p>
+        </header>
+
+        <div class="grade grade--2 grade--invertida">
+          <div class="painel revelar">
+            <div class="painel__barra">
+              <h3 class="painel__titulo">Inovações organizacionais e de marketing</h3>
+              <p class="painel__fonte">tabela 5927</p>
+            </div>
+            <div class="grafico" id="alem-grafico"></div>
+            <p class="painel__nota">
+              Uma mesma empresa pode aparecer em mais de uma categoria. Percentuais sobre as 39.329 inovadoras.
+            </p>
+          </div>
+
+          <div class="painel revelar painel--bio">
+            <div class="painel__barra">
+              <h3 class="painel__titulo">Tecnologias de fronteira</h3>
+              <p class="painel__fonte">tabela 5928</p>
+            </div>
+            <div class="bio-cards" id="bio-cards"></div>
+            <p class="painel__nota">
+              Empresas que declararam usar biotecnologia ou nanotecnologia, entre as 39.329 inovadoras.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DADOS ================= -->
+    <section class="secao secao--alt" id="dados">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">08</span>Base de dados</p>
+          <h2>Todos os números, em uma tabela</h2>
+          <p class="secao__dek">
+            Busque, ordene e exporte os indicadores usados nesta página. Cada linha traz a tabela do SIDRA
+            que originou o dado.
+          </p>
+        </header>
+
+        <div class="tabela-controles revelar">
+          <label class="busca">
+            <span class="sr-only">Buscar indicador</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+            <input type="search" id="tabela-busca" placeholder="Buscar por tema ou indicador…" autocomplete="off">
+          </label>
+          <div class="tabela-controles__dir">
+            <p class="tabela-contagem" id="tabela-contagem" aria-live="polite"></p>
+            <button class="botao botao--pequeno" type="button" id="btn-csv">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>
+              Exportar CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="tabela-envoltorio revelar">
+          <table class="tabela" id="tabela">
+            <caption class="sr-only">Indicadores da PINTEC 2017 usados nesta página</caption>
+            <thead>
+              <tr>
+                <th scope="col" data-coluna="tema" aria-sort="ascending">Tema</th>
+                <th scope="col" data-coluna="indicador">Indicador</th>
+                <th scope="col" data-coluna="valor" class="num">Valor</th>
+                <th scope="col" data-coluna="unidade">Unidade</th>
+                <th scope="col" data-coluna="tabela" class="num">Tabela</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-corpo"></tbody>
+          </table>
+          <p class="tabela-vazia" id="tabela-vazia" hidden>Nenhum indicador encontrado para essa busca.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= METODOLOGIA ================= -->
+    <section class="secao" id="metodologia">
+      <div class="container">
+        <header class="secao__cabeca revelar">
+          <p class="olho"><span class="olho__num">09</span>Metodologia</p>
+          <h2>De onde vêm os dados</h2>
+          <p class="secao__dek">
+            Todos os indicadores são oficiais, publicados pelo IBGE e consultados na API do SIDRA.
+            A página carrega um snapshot local e tenta atualizá-lo automaticamente pela API.
+          </p>
+        </header>
+
+        <div class="metodo-grade revelar">
+          <div class="metodo-card">
+            <p class="metodo-card__rotulo">Fonte</p>
+            <p class="metodo-card__valor">PINTEC 2017</p>
+            <p class="metodo-card__nota">Pesquisa de Inovação — IBGE</p>
+          </div>
+          <div class="metodo-card">
+            <p class="metodo-card__rotulo">Período</p>
+            <p class="metodo-card__valor">2015–2017</p>
+            <p class="metodo-card__nota">Triênio de referência da edição</p>
+          </div>
+          <div class="metodo-card">
+            <p class="metodo-card__rotulo">Abrangência</p>
+            <p class="metodo-card__valor">Brasil</p>
+            <p class="metodo-card__nota">Agregado nacional, sem recorte territorial</p>
+          </div>
+          <div class="metodo-card">
+            <p class="metodo-card__rotulo">Atualização</p>
+            <p class="metodo-card__valor" id="meta-atualizacao">Snapshot local</p>
+            <p class="metodo-card__nota" id="meta-atualizacao-nota">Consultando a API SIDRA…</p>
+          </div>
+        </div>
+
+        <div class="grade grade--2 metodo-texto revelar">
+          <div>
+            <h3>O que a pesquisa cobre</h3>
+            <p>
+              A PINTEC investiga empresas com 10 ou mais pessoas ocupadas nas indústrias extrativa e de
+              transformação, na eletricidade e gás, e em serviços selecionados (telecomunicações, tecnologia
+              da informação, tratamento de dados, arquitetura e engenharia, edição, P&amp;D, entre outros).
+              O recorte desta página é o agregado nacional.
+            </p>
+            <p>
+              A edição 2017 é a mais recente disponível na API SIDRA. A PINTEC Semestral 2022 é uma estatística
+              experimental, com metodologia distinta, e não integra esta base.
+            </p>
+          </div>
+          <div>
+            <h3>Como os dados chegam até aqui</h3>
+            <p>
+              O arquivo <code>dados/snapshot.js</code> guarda uma cópia dos valores consultados na API. Ao abrir
+              a página, o navegador busca novamente as tabelas no SIDRA e substitui os números quando a consulta
+              funciona. Se a rede falhar, o snapshot local continua sendo exibido.
+            </p>
+            <p>
+              Valores monetários estão em milhares de reais, a preços correntes. Taxas e participações são
+              calculadas pela página a partir dos totais publicados. Categorias de múltipla escolha não somam
+              o total de empresas.
+            </p>
+          </div>
+        </div>
+
+        <div class="tabelas-lista revelar">
+          <h3>Tabelas consultadas no SIDRA</h3>
+          <ul id="lista-tabelas"></ul>
+        </div>
+
+        <div class="metodo-acoes revelar">
+          <button class="botao botao--principal" type="button" id="btn-atualizar-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+            Atualizar pela API SIDRA
+          </button>
+          <a class="botao botao--fantasma" href="https://servicodados.ibge.gov.br/api/docs/agregados?versao=3" target="_blank" rel="noopener">
+            Documentação da API
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-8 8M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__interno">
+      <div class="rodape__marca">
+        <span class="marca__selo" aria-hidden="true">P</span>
+        <div>
+          <p><strong>Inovação tecnológica no Brasil</strong></p>
+          <p class="rodape__nota">Uma leitura visual da PINTEC 2017, com dados abertos do IBGE.</p>
+        </div>
+      </div>
+      <nav class="rodape__links" aria-label="Links externos">
+        <a href="https://sidra.ibge.gov.br/pesquisa/pintec/tabelas" target="_blank" rel="noopener">PINTEC no SIDRA</a>
+        <a href="https://www.ibge.gov.br/estatisticas/multidominio/ciencia-tecnologia-e-inovacao/9141-pesquisa-de-inovacao.html" target="_blank" rel="noopener">Pesquisa de Inovação</a>
+        <a href="https://servicodados.ibge.gov.br/api/v3/agregados" target="_blank" rel="noopener">API SIDRA v3</a>
+      </nav>
+      <p class="rodape__credito">
+        Dados: IBGE · SIDRA. Snapshot gerado em <span id="rodape-data">—</span>.
+        Conteúdo sob licença aberta, com atribuição à fonte.
+      </p>
+    </div>
+  </footer>
+
+  <div class="dica" id="dica" role="tooltip" aria-hidden="true"></div>
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Esta página precisa de JavaScript para exibir os gráficos interativos. Os dados também estão disponíveis na API SIDRA do IBGE.</div>
+  </noscript>
+
+  <script src="dados/snapshot.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
