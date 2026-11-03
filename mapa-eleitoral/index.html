@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061426">
+  <title>Mapa eleitoral do Maranhão · 2026 | Observatório Eleitoral Brasileiro</title>
+  <meta name="description" content="Mapa interativo dos 217 municípios do Maranhão com dados oficiais do TSE e malha do IBGE: comparecimento, abstenção, votos válidos, brancos, nulos e candidatos.">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__interno">
+      <a class="marca" href="../mapa" aria-label="Voltar ao mapa do Observatório Eleitoral Brasileiro">
+        <span class="marca__selo" aria-hidden="true">OE</span>
+        <span class="marca__texto">
+          <strong>Observatório Eleitoral</strong>
+          <span>Mapa do Maranhão · 2026</span>
+        </span>
+      </a>
+      <div class="topo__acoes">
+        <span class="selo-fonte">TSE + IBGE · Dados oficiais</span>
+        <a class="botao-topo" href="../mapa">Abrir versão do app</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    <section class="abertura">
+      <div>
+        <p class="olho">Mapa interativo · Eleições 2026</p>
+        <h1>Mapa eleitoral do Maranhão</h1>
+        <p class="abertura__texto">
+          Explore os 217 municípios maranhenses por cargo, turno, candidato e partido.
+          A coloração acompanha o indicador escolhido e o painel lateral reúne os
+          totais oficiais do município.
+        </p>
+      </div>
+      <dl class="cobertura" aria-label="Cobertura do mapa">
+        <div><dt>Municípios</dt><dd>217</dd></div>
+        <div><dt>Cargos</dt><dd>5</dd></div>
+        <div><dt>Ano</dt><dd>2026</dd></div>
+        <div><dt>Correspondência</dt><dd>TSE ↔ IBGE</dd></div>
+      </dl>
+    </section>
+
+    <section class="filtros" aria-label="Filtros do mapa">
+      <div class="filtros__cabecalho">
+        <div>
+          <p class="rotulo">Filtros do mapa</p>
+          <p class="filtros__ajuda">Os filtros valem para a coloração do mapa e para o painel do município.</p>
+        </div>
+        <button type="button" id="limpar-filtros" class="link-limpar">Limpar filtros</button>
+      </div>
+
+      <div class="filtros__grade">
+        <label class="campo">
+          <span>Cargo</span>
+          <select id="filtro-cargo"></select>
+        </label>
+        <label class="campo">
+          <span>Turno</span>
+          <select id="filtro-turno"></select>
+        </label>
+        <label class="campo">
+          <span>Partido</span>
+          <select id="filtro-partido"></select>
+        </label>
+        <label class="campo">
+          <span>Candidato</span>
+          <select id="filtro-candidato"></select>
+        </label>
+        <label class="campo">
+          <span>Colorir por</span>
+          <select id="filtro-visualizacao"></select>
+        </label>
+      </div>
+
+      <div class="busca-area">
+        <label class="campo busca-campo" for="busca-municipio">
+          <span>Buscar município</span>
+          <div class="busca-caixa">
+            <span class="busca-icone" aria-hidden="true">⌕</span>
+            <input
+              id="busca-municipio"
+              type="text"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="sugestoes-municipios"
+              aria-autocomplete="list"
+              autocomplete="off"
+              placeholder="Digite o nome do município…"
+            >
+            <button type="button" id="limpar-busca" class="busca-limpar" aria-label="Limpar busca" hidden>×</button>
+          </div>
+        </label>
+        <div id="sugestoes-municipios" class="sugestoes" role="listbox" hidden></div>
+      </div>
+
+      <p id="aviso-candidato" class="aviso" hidden>
+        Selecione um candidato para visualizar a votação por município.
+      </p>
+    </section>
+
+    <div class="layout">
+      <section class="mapa-caixa" aria-label="Mapa dos municípios do Maranhão">
+        <div id="mapa"></div>
+
+        <div class="mapa-selo" aria-hidden="true">
+          <p>Mapa eleitoral</p>
+          <strong>Maranhão · 2026</strong>
+          <span id="mapa-recorte">Governador · 1º turno</span>
+        </div>
+
+        <div class="legenda" id="legenda" aria-label="Legenda do mapa"></div>
+
+        <div class="fonte-selo" aria-hidden="true">Malha IBGE · Dados TSE</div>
+      </section>
+
+      <aside class="painel" id="painel" aria-label="Painel do município" aria-live="polite"></aside>
+    </div>
+
+    <div class="notas">
+      <p class="nota nota--neutra">
+        <strong>Como usar:</strong> arraste para deslocar, use a roda do mouse ou os
+        controles para ampliar. Clique em um município para abrir o painel. A busca
+        aproxima e destaca o município selecionado.
+      </p>
+      <p class="nota nota--fonte" id="nota-fonte"></p>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Fonte: Tribunal Superior Eleitoral (TSE) e Instituto Brasileiro de Geografia e Estatística (IBGE).</p>
+    <p>Dados de 2026 sujeitos à apuração oficial. Consulte sempre a fonte do TSE para o resultado definitivo.</p>
+  </footer>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="dados/ma-municipios.js"></script>
+  <script src="dados/mapa-ma-2026.js"></script>
+  <script src="js/mapa.js"></script>
+</body>
+</html>
